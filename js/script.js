@@ -1,0 +1,1 @@
+setTimeout("document.getElementById('audio').play()", 0);
