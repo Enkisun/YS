@@ -13,7 +13,8 @@
 	margin: 0;
 	box-sizing: border-box;
 	user-select: none;
-  outline: none; 
+    outline: none;
+    overflow: hidden;
 }
 
 body {
@@ -23,22 +24,21 @@ body {
 }
 
 .main {
-	overflow: hidden;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-wrap: wrap;
-	margin: 0 auto;
-	width: 50%;
-	height: inherit;
-	-webkit-perspective-origin: center 300px;
-  -webkit-perspective: 800;
+	margin: 10vh auto 0;
+	width: 80%;
+    height: 80vh;
+	perspective-origin: center 300px;
+    perspective: 800px;
 }
 
 .text {
 	font-family: 'Fg', sans-serif;
 	color: yellow;
-  font-size: 42px;
+    font-size: 42px;
 }
 
 .main h1 {
@@ -48,11 +48,10 @@ body {
 	font-size: 200px;
 	color: yellow;
 	text-align: center;
-	transform-origin: center center;
-  animation: logo 25s linear;
+    animation: logo 25s linear;
 	animation-iteration-count: 1;
-  animation-delay: 18s;
-  animation-timing-function: ease-in;
+    animation-delay: 18s;
+    animation-timing-function: ease-in;
 }
 
 .promo {
@@ -60,53 +59,52 @@ body {
 	opacity: 0;
 	color: white;
 	animation: promo 11s linear;
-  animation-iteration-count: 1;
-  animation-delay: 5s;
+    animation-iteration-count: 1;
+    animation-delay: 5s;
 }
 
 .crawl {
-	width: 65%;
-  text-align: center;
-  opacity: 0;
-  animation: crawl 25s linear;
-  animation-iteration-count: 1;
-  animation-delay: 0s;
-  transform-style: preserve-3d;
+	width: 80%;
+    text-align: center;
+    opacity: 0;
+    animation: crawl 25s linear;
+    animation-iteration-count: 1;
+    animation-delay: 25s;
 }
 
 @-webkit-keyframes promo {
 	from {
 		opacity: 0;
 	}
-  20% {
+    20% {
 		opacity: 1;
 	}
-  80% {
+    80% {
 		opacity: 1;
 	}
-  to {
+    to {
 		opacity: 0;
 	}
 }
 
 @-webkit-keyframes logo {
-  from {
-		transform: translateZ(0);
+    from {
 		opacity: 1;
 	}
-  60% {
-		transform: translateZ(-20000px); 
+    to {
+		transform: translateZ(-10000px) translateY(-2000px); 
 		opacity: 0;
 	}
 }
 
 @-webkit-keyframes crawl {
-  from {
-		transform: rotateX(80deg) translateZ(330px) translateY(200px);
+    from {
+		transform: rotateX(70deg) translateZ(250px) translateY(700px);
 		opacity: 1;
 	}
-  to {
-		transform: rotateX(70deg) translateZ(100px) translateY(-1500px);
+    60%  { transform: rotateX(70deg) translateZ(250px) translateY(-1200px);  opacity: 1; }
+    to {
+		transform: rotateX(70deg) translateZ(250px) translateY(-2500px);
 		opacity: 0;
 	}
 }
